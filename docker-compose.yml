@@ -18,17 +18,4 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
-  strapi:
-    image: naskio/strapi:latest
-    container_name: my-app1
-    ports:
-      - 1337:1337
-    environment:
-      - DATABASE_CLIENT=${DATABASE_CLIENT}
-      - DATABASE_HOST=${DATABASE_HOST}
-      - DATABASE_PORT=${DATABASE_PORT}
-      - DATABASE_NAME=${DATABASE_NAME}
-      - DATABASE_USERNAME=${DATABASE_USERNAME}
-      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
-      - DATABASE_SSL=${DATABASE_SSL}
 
