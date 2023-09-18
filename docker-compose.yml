@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: thanasak/my-app:1.0
+    image: postgres:latest
     container_name: my-db1
     ports:
       - 54321:5432
