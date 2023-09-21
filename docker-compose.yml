@@ -2,20 +2,23 @@ version: '3'
 
 services:
   db:
-    image: postgres:latest
+    image: postgres:14
     container_name: my-db1
     ports:
       - 54321:5432
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-  pg-admin:
-    image: dpage/pgadmin4:latest
-    container_name: pg-admin1
+  app:
+    image: thanasak/app:1.0
+    container_name:  app
     ports:
-      - 4433:443
-      - 8080:80
+      - 1337:1337
     environment:
-      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
-      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
-
+      - DATABASE_CLIENT=${DATABASE_CLIENT}
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${POSTGRES_USER}
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+      - DATABASE_SSL=${DATABASE_SSL}
